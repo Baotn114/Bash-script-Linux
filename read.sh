@@ -8,12 +8,12 @@ then
     echo -e "Enter the word you want to replace: \c"
     read word
     
-    if grep -q $word $filename
+    if grep -q -i $word $filename
     then
         # Thay tu minh muon thay vao
         echo -e "Enter the word you want: \c"
         read replace
-        sed -i "s/$word/$replace/g" $filename 
+        sed -i "s/$word/$replace/gI" $filename 
 
         # Doc file ra man hinh
         cat $filename | while read p
